@@ -226,3 +226,5 @@ Build is not aborted; you can treat errors as diagnostics during development.
 ## License
 
 MIT – see `LICENSE`. Attribution required in all copies per the license text.
+
+> Note: This README line was updated to trigger a CI release rerun.
