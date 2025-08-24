@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/thesadzzad/penguinui/compare/v1.0.4...v1.0.5) (2025-08-24)
+
+
+### Bug Fixes
+
+* **cli:** always clear output directory before generating packages ([fa7a338](https://github.com/thesadzzad/penguinui/commit/fa7a3388b1aee5a03b330c4b5cecc169894255c4))
+
 ## [1.0.4](https://github.com/thesadzzad/penguinui/compare/v1.0.3...v1.0.4) (2025-08-24)
 
 ## [1.0.3](https://github.com/thesadzzad/penguinui/compare/v1.0.2...v1.0.3) (2025-08-24)

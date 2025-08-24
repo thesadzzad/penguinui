@@ -1,6 +1,6 @@
 {
   "name": "postcss-penguinui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "PostCSS plugin + CLI utilities for PenguinUI-style package CSS -> JSON workflows",
   "license": "MIT",
   "author": "thesadzzad",
