@@ -15,24 +15,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
-      - name: Enable Corepack
-        run: corepack enable
-      - name: Env details
-        run: |
-          echo "Node: $(node -v)" && echo "NPM: $(npm -v)" || true
-          which pnpm || echo 'pnpm not yet on PATH'
-          pnpm -v || true
-          echo PATH=$PATH
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - name: Lint & Test
-        run: pnpm test
+          cache: 'npm'
+      - name: Install dependencies (npm)
+        run: npm install --no-audit --no-fund
+      - name: Build
+        run: npm run build
+      - name: Unit tests
+        run: node --test dist/test/**/*.test.js
+      - name: Lint
+        run: npx eslint .
 
   release:
     if: github.ref == 'refs/heads/main'
@@ -49,24 +40,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: false
-      - name: Enable Corepack
-        run: corepack enable
-      - name: Env details
-        run: |
-          echo "Node: $(node -v)" && echo "NPM: $(npm -v)" || true
-          which pnpm || echo 'pnpm not yet on PATH'
-          pnpm -v || true
-          echo PATH=$PATH
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          cache: 'npm'
+      - name: Install dependencies (npm)
+        run: npm install --no-audit --no-fund
+      - name: Build
+        run: npm run build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm release
+        run: npx semantic-release
