@@ -1,6 +1,6 @@
 # postcss-penguinui
 
-![CI](https://github.com/thesadzzad/postcss-penguinui/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/thesadzzad/postcss-penguinui/actions/workflows/ci.yml/badge.svg) [![npm version](https://img.shields.io/npm/v/postcss-penguinui.svg)](https://www.npmjs.com/package/postcss-penguinui)
 
 PostCSS plugin + CLI to compose and distribute small style “packages” as JSON and re-use them via `@package` / `@use` at-rules.
 
@@ -59,8 +59,9 @@ export default {
 
 ```js
 // postcss.config.cjs
+const penguin = require('postcss-penguinui').default; // or .plugin
 module.exports = {
-  plugins: [require("postcss-penguinui")()],
+  plugins: [penguin()],
 };
 ```
 

@@ -38,7 +38,8 @@
     }
   },
   "files": [
-    "dist",
+    "dist/src",
+    "dist/cli",
     "README.md",
     "LICENSE"
   ],
