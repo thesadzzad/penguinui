@@ -21,6 +21,12 @@ jobs:
         with:
           version: 9
           run_install: false
+      - name: Env details
+        run: |
+          echo "Node: $(node -v)" && echo "NPM: $(npm -v)" || true
+          which pnpm || echo 'pnpm not yet on PATH'
+          pnpm -v || true
+          echo PATH=$PATH
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Lint & Test
@@ -47,6 +53,12 @@ jobs:
         with:
           version: 9
           run_install: false
+      - name: Env details
+        run: |
+          echo "Node: $(node -v)" && echo "NPM: $(npm -v)" || true
+          which pnpm || echo 'pnpm not yet on PATH'
+          pnpm -v || true
+          echo PATH=$PATH
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Release
