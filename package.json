@@ -1,0 +1,72 @@
+{
+  "name": "postcss-penguinui",
+  "version": "1.0.0",
+  "description": "PostCSS plugin + CLI utilities for PenguinUI-style package CSS -> JSON workflows",
+  "license": "MIT",
+  "author": "thesadzzad",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "bin": {
+    "penguinui-generate": "dist/cli/generate.js",
+    "penguinui": "dist/cli/penguinui.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesadzzad/postcss-penguinui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thesadzzad/postcss-penguinui/issues"
+  },
+  "homepage": "https://github.com/thesadzzad/postcss-penguinui#readme",
+  "keywords": [
+    "postcss",
+    "postcss-plugin",
+    "css",
+    "utility",
+    "penguinui",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js",
+      "require": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "pnpm test",
+    "unit": "pnpm build && node --test dist/test/**/*.test.js",
+    "test": "pnpm run unit && eslint .",
+    "release": "semantic-release"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.27"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.47.0",
+    "postcss": "^8.4.27",
+    "typescript": "5.5.4",
+    "semantic-release": "^22.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/npm": "^11.0.0",
+    "@semantic-release/commit-analyzer": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^12.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,27 @@
+/* Big integration test input */
+@package example as btn;
+@package other as box;
+@package example as btn; /* duplicate alias same package - ok */
+@package other as btn; /* duplicate alias different package - should emit comment */
+@package missing as ghost; /* unknown package */
+
+.btn,
+.primary-btn {
+  @use btn;
+}
+.card {
+  @use box;
+}
+/* multiple uses inside same rule */
+.combo {
+  @use btn;
+  @use box;
+}
+/* nested selectors unaffected */
+.wrapper .inner {
+  color: green;
+}
+/* multi-use single at-rule */
+.multi {
+  @use btn box missing;
+}

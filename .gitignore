@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.log
+npm-debug.log*
+.pnpm-debug.log*
+.DS_Store
+coverage/
+.multiout/
+output/
+input.json
+outpkgs/
+penguinui/
+generated/

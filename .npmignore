@@ -1,0 +1,20 @@
+# Exclusions for npm publish (files array still whitelists dist, README.md, LICENSE)
+# Keep this as a safeguard.
+
+# Source & tests not explicitly listed
+src/
+test/
+cli/
+
+# Local packages directory (should not ship user-installed packages)
+penguinui/
+
+# Misc build artifacts
+node_modules/
+coverage/
+*.log
+.pnpm-debug.log*
+.DS_Store
+multiout/
+output/
+generated/
