@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Lint & Test
-        run: pnpm test
+        run: pnpm build && node --test dist/test && eslint .
 
   release:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'

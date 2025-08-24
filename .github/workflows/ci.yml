@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Unit tests
-        run: node --test dist/test/**/*.test.js
+        run: node --test dist/test
       - name: Lint
         run: npx eslint .
 
