@@ -19,7 +19,6 @@
     "url": "https://github.com/thesadzzad/penguinui/issues"
   },
   "homepage": "https://github.com/thesadzzad/penguinui#readme",
-  "packageManager": "pnpm@9.0.0",
   "keywords": [
     "postcss",
     "postcss-plugin",
@@ -45,9 +44,9 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "prepublishOnly": "pnpm test",
-    "unit": "pnpm build && node --test dist/test/**/*.test.js",
-    "test": "pnpm run unit && eslint .",
+    "prepublishOnly": "npm test",
+    "unit": "npm run build && node --test dist/test/**/*.test.js",
+    "test": "npm run unit && eslint .",
     "release": "semantic-release"
   },
   "peerDependencies": {
