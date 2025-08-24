@@ -1,6 +1,6 @@
 {
   "name": "penguinui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PostCSS plugin + CLI utilities for PenguinUI-style package CSS -> JSON workflows",
   "license": "MIT",
   "author": "thesadzzad",
@@ -44,8 +44,8 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-  "prepublishOnly": "npm test",
-  "unit": "npm run build && node --test dist/test/index.test.js dist/test/plugin-extra.test.js",
+    "prepublishOnly": "npm test",
+    "unit": "npm run build && node --test dist/test/index.test.js dist/test/plugin-extra.test.js",
     "test": "npm run unit && eslint .",
     "release": "semantic-release"
   },
