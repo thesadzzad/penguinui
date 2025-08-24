@@ -5,7 +5,7 @@ import {
   mkdirSync,
   statSync,
   readdirSync,
-  rmSync
+  rmSync,
 } from "node:fs";
 import { resolve, extname } from "node:path";
 import postcss, { Rule, Declaration, Root } from "postcss";
@@ -121,7 +121,9 @@ async function main() {
   // Remove output directory if it exists, then recreate
   try {
     rmSync(outAbs, { recursive: true, force: true });
-  } catch {}
+  } catch {
+    /* ignore: directory may not exist */
+  }
   mkdirSync(outAbs, { recursive: true });
   let totalPkgs = 0;
   for (const filePath of cssFiles) {
