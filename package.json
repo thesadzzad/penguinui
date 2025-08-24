@@ -1,5 +1,5 @@
 {
-  "name": "postcss-penguinui",
+  "name": "penguinui",
   "version": "1.0.0",
   "description": "PostCSS plugin + CLI utilities for PenguinUI-style package CSS -> JSON workflows",
   "license": "MIT",
@@ -13,12 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thesadzzad/postcss-penguinui.git"
+    "url": "git+https://github.com/thesadzzad/penguinui.git"
   },
   "bugs": {
-    "url": "https://github.com/thesadzzad/postcss-penguinui/issues"
+    "url": "https://github.com/thesadzzad/penguinui/issues"
   },
-  "homepage": "https://github.com/thesadzzad/postcss-penguinui#readme",
+  "homepage": "https://github.com/thesadzzad/penguinui#readme",
+  "packageManager": "pnpm@9.0.0",
   "keywords": [
     "postcss",
     "postcss-plugin",
